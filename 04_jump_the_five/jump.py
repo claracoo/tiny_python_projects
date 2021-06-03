@@ -24,14 +24,7 @@ def main():
     args = get_args()
     jumper = {'1': '9', '2': '8', '3': '7', '4': '6', '5': '0',
               '6': '4', '7': '3', '8': '2', '9': '1', '0': '5'}
-
-    message = ''
-    for char in args.text:
-        if char in jumper.keys():
-            message += jumper[char]
-        else:
-            message += char
-    print(message)
+    print(args.text.translate(str.maketrans(jumper)))
 
 
 # --------------------------------------------------
